@@ -1,3 +1,5 @@
 FROM n8nio/n8n:latest
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 USER node
-ENTRYPOINT ["n8n", "start"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
